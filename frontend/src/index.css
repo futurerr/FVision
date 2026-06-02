@@ -1,0 +1,118 @@
+/* Enhanced FVision Styles - Compatible Version */
+
+:root {
+  /* Color Palette */
+  --color-bg-primary: #0a0e1a;
+  --color-bg-secondary: #0f172a;
+  --color-accent-cyan: #22d3ee;
+  --color-accent-green: #10b981;
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #0a0e1a;
+  color: var(--color-text-primary);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Glass Panel Effect - Compatible Version */
+.glass-panel {
+  /* Fallback for browsers without backdrop-filter support */
+  background: rgba(15, 23, 42, 0.85) !important;
+
+  /* Modern browsers with backdrop-filter support */
+  backdrop-filter: blur(24px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(200%) !important;
+
+  border: 1px solid rgba(34, 211, 238, 0.3) !important;
+  border-radius: 12px !important;
+
+  /* Enhanced shadow for depth */
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 0 40px rgba(34, 211, 238, 0.15),
+    inset 0 0 60px rgba(34, 211, 238, 0.03) !important;
+
+  transition: all 0.3s ease !important;
+}
+
+/* Feature detection - if backdrop-filter is supported, use lighter background */
+@supports (backdrop-filter: blur(24px)) or (-webkit-backdrop-filter: blur(24px)) {
+  .glass-panel {
+    background: rgba(10, 14, 26, 0.6) !important;
+  }
+}
+
+.glass-panel:hover {
+  border-color: rgba(34, 211, 238, 0.5) !important;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 0 50px rgba(34, 211, 238, 0.25),
+    inset 0 0 60px rgba(34, 211, 238, 0.05) !important;
+  transform: translateY(-1px);
+}
+
+/* Glow Button Effect */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.6);
+  }
+}
+
+.glow-button {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(34, 211, 238, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.5);
+}
+
+/* Debug helper - remove after testing */
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.05) 0%, transparent 50%);
+  border-radius: 12px;
+  pointer-events: none;
+}

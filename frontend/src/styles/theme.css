@@ -1,0 +1,60 @@
+:root {
+  /* Colors */
+  --color-bg-primary: #020617; /* Deep Slate */
+  --color-bg-secondary: #0f172a;
+  --color-bg-glass: rgba(15, 23, 42, 0.6);
+  
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  
+  --color-accent-cyan: #22d3ee; /* Tech Cyan */
+  --color-accent-cyan-glow: rgba(34, 211, 238, 0.4);
+  
+  --color-accent-green: #10b981; /* Pitch Green */
+  --color-accent-green-glow: rgba(16, 185, 129, 0.4);
+
+  /* Effects */
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  --backdrop-blur: blur(12px);
+  
+  /* Layout */
+  --sidebar-width: 280px;
+  --header-height: 70px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  overflow: hidden; /* App like feel */
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-secondary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-cyan);
+}
+
+.glass-panel {
+  background: var(--color-bg-glass);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 16px;
+}
+
+.tech-glow-text {
+  text-shadow: 0 0 10px var(--color-accent-cyan-glow);
+}

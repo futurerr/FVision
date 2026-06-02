@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+*.egg-info/
+dist/
+build/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Uploads
+uploads/
+!uploads/.gitkeep
+
+# Model Weights
+*.pt
+
+# Node
+node_modules/
+frontend/dist/
+
+# Environment
+.env
+.env.local
